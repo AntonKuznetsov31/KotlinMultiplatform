@@ -1,0 +1,17 @@
+CREATE TABLE appModel(
+	title TEXT NOT NULL
+);
+
+getModel:
+SELECT *
+FROM appModel;
+
+insertTitle:
+INSERT OR REPLACE
+INTO appModel(
+	title
+) VALUES(title);
+
+deleteTitle:
+DELETE FROM appModel
+WHERE title = ?;
