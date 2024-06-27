@@ -1,17 +1,26 @@
-CREATE TABLE appModel(
-	title TEXT NOT NULL
+CREATE TABLE userEntity(
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	firstName TEXT NOT NULL,
+	lastName TEXT NOT NULL
 );
 
-getModel:
+getAllUsers:
 SELECT *
-FROM appModel;
+FROM userEntity;
 
-insertTitle:
+getUserById:
+SELECT *
+FROM userEntity
+WHERE id = ?;
+
+insertUser:
 INSERT OR REPLACE
-INTO appModel(
-	title
-) VALUES(title);
+INTO userEntity(
+	id,
+	firstName,
+	lastName
+) VALUES(?, ?, ?);
 
-deleteTitle:
-DELETE FROM appModel
-WHERE title = ?;
+deleteUserById:
+DELETE FROM userEntity
+WHERE id = ?;
