@@ -13,6 +13,7 @@ kotlin {
 			compileTaskProvider.configure {
 				compilerOptions {
 					jvmTarget.set(JvmTarget.JVM_11)
+					freeCompilerArgs.add("-Xexpect-actual-classes")
 				}
 			}
 		}
@@ -52,6 +53,7 @@ kotlin {
 			implementation(libs.native.driver)
 		}
 	}
+	task("testClasses")
 }
 
 android {
