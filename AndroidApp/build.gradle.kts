@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.compose.compiler)
 	alias(libs.plugins.kotlinxSerialization)
 	alias(libs.plugins.sqldelight)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -45,4 +47,10 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+}
+
+kapt {
+    correctErrorTypes = true
 }

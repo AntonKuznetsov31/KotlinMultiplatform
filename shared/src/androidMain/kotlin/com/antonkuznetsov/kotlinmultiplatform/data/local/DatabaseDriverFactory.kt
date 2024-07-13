@@ -7,6 +7,6 @@ import com.antonkuznetsov.kotlinmultiplatform.cache.AppDatabase
 
 actual class DatabaseDriverFactory(private val context: Context) {
     actual fun createDriver(): SqlDriver {
-        return AndroidSqliteDriver(AppDatabase.Schema, context, "users.db")
+        return AndroidSqliteDriver(AppDatabase.Schema, context, "notes.db")
     }
 }

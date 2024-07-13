@@ -1,26 +1,24 @@
-CREATE TABLE userEntity(
+CREATE TABLE noteEntity(
 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	firstName TEXT NOT NULL,
-	lastName TEXT NOT NULL
+	text TEXT NOT NULL
 );
 
-getAllUsers:
+getAllNotes:
 SELECT *
-FROM userEntity;
+FROM noteEntity;
 
-getUserById:
+getNoteById:
 SELECT *
-FROM userEntity
+FROM noteEntity
 WHERE id = ?;
 
-insertUser:
+insertNote:
 INSERT OR REPLACE
-INTO userEntity(
+INTO noteEntity(
 	id,
-	firstName,
-	lastName
-) VALUES(?, ?, ?);
+	text
+) VALUES(?, ?);
 
-deleteUserById:
-DELETE FROM userEntity
+deleteNoteById:
+DELETE FROM noteEntity
 WHERE id = ?;
